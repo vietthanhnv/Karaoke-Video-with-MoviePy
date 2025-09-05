@@ -29,6 +29,13 @@ class MockVideoClip:
         self.duration = duration
         self.size = size
         self.fps = fps
+        self.layer_index = 0
+        self.audio = None
+        self.start = 0
+    
+    @property
+    def end(self):
+        return self.start + self.duration
     
     def resize(self, size):
         self.size = size

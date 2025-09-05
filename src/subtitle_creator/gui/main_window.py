@@ -602,6 +602,11 @@ class MainWindow(QMainWindow):
         """Get the effects panel for external control."""
         return self.effects_panel
     
+    def update_subtitle_data(self, subtitle_data) -> None:
+        """Update the subtitle editor with new subtitle data."""
+        if hasattr(self, 'subtitle_editor') and self.subtitle_editor:
+            self.subtitle_editor.set_subtitle_data(subtitle_data)
+    
     def _on_effects_changed(self) -> None:
         """Handle effects changes from the effects panel."""
         # This would trigger preview updates in a real application

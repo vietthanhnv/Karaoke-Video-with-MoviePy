@@ -274,8 +274,15 @@ class TestBaseEffect:
             effect.set_parameter_value('nonexistent', 0.5)
     
     @patch('src.subtitle_creator.effects.base.MOVIEPY_AVAILABLE', False)
-    def test_create_text_clip_without_moviepy(self):
+    @patch('src.subtitle_creator.effects.base.TextClip')
+    def test_create_text_clip_without_moviepy(self, mock_textclip):
         """Test text clip creation when MoviePy is not available."""
+        # Create a mock clip instance
+        mock_clip = Mock()
+        mock_clip.text = "Test text"
+        mock_clip.duration = 5.0
+        mock_textclip.return_value = mock_clip
+        
         effect = MockEffect("test", {'opacity': 0.5})
         
         clip = effect._create_text_clip("Test text", 0.0, 5.0)

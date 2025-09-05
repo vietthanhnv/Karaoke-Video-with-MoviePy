@@ -498,6 +498,13 @@ class TestEffectsPanel:
         # Test applying effects to clip (mock clip)
         mock_clip = Mock()
         mock_clip.duration = 5.0
+        mock_clip.fps = 24
+        mock_clip.layer_index = 0
+        mock_clip.audio = None
+        mock_clip.start = 0
+        mock_clip.size = (1920, 1080)
+        mock_clip.end = 5.0
+        mock_clip.mask = None  # No mask to avoid CompositeVideoClip mask issues
         
         result_clip = panel.apply_effects_to_clip(mock_clip, sample_subtitle_data)
         

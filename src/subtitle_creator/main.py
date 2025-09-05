@@ -34,7 +34,7 @@ def main():
         main_window = MainWindow()
         
         # Create application controller and connect to main window
-        app_controller = AppController(main_window, test_mode=True)
+        app_controller = AppController(main_window, test_mode=False)
         
         # Show main window
         main_window.show()

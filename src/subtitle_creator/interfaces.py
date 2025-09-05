@@ -11,7 +11,7 @@ from dataclasses import dataclass
 
 # Optional import for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy.editor import VideoClip
+    from moviepy import VideoClip
 except ImportError:
     # Create a placeholder for development/testing
     class VideoClip:

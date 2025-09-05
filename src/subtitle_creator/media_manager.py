@@ -12,8 +12,7 @@ from pathlib import Path
 
 # Optional imports for media processing - will be available when dependencies are installed
 try:
-    from moviepy.editor import VideoFileClip, ImageClip, AudioFileClip, CompositeVideoClip
-    from moviepy.video.fx import resize
+    from moviepy import VideoFileClip, ImageClip, AudioFileClip, CompositeVideoClip
     MOVIEPY_AVAILABLE = True
 except ImportError:
     # Create placeholders for development/testing
@@ -24,8 +23,8 @@ except ImportError:
             self.fps = 24
             self.audio = None
             
-        def resize(self, size):
-            """Mock resize method for testing."""
+        def resized(self, size):
+            """Mock resized method for testing."""
             new_clip = VideoFileClip()
             new_clip.duration = self.duration
             new_clip.size = size if isinstance(size, tuple) else (size[0], size[1])
@@ -33,8 +32,8 @@ except ImportError:
             new_clip.audio = self.audio
             return new_clip
             
-        def set_fps(self, fps):
-            """Mock set_fps method for testing."""
+        def with_fps(self, fps):
+            """Mock with_fps method for testing."""
             new_clip = VideoFileClip()
             new_clip.duration = self.duration
             new_clip.size = self.size
@@ -42,8 +41,8 @@ except ImportError:
             new_clip.audio = self.audio
             return new_clip
             
-        def set_audio(self, audio_clip):
-            """Mock set_audio method for testing."""
+        def with_audio(self, audio_clip):
+            """Mock with_audio method for testing."""
             new_clip = VideoFileClip()
             new_clip.duration = self.duration
             new_clip.size = self.size
@@ -58,8 +57,8 @@ except ImportError:
             self.fps = 24
             self.audio = None
             
-        def resize(self, size):
-            """Mock resize method for testing."""
+        def resized(self, size):
+            """Mock resized method for testing."""
             new_clip = ImageClip()
             new_clip.duration = self.duration
             new_clip.size = size if isinstance(size, tuple) else (size[0], size[1])
@@ -67,8 +66,8 @@ except ImportError:
             new_clip.audio = self.audio
             return new_clip
             
-        def set_fps(self, fps):
-            """Mock set_fps method for testing."""
+        def with_fps(self, fps):
+            """Mock with_fps method for testing."""
             new_clip = ImageClip()
             new_clip.duration = self.duration
             new_clip.size = self.size
@@ -76,8 +75,8 @@ except ImportError:
             new_clip.audio = self.audio
             return new_clip
             
-        def set_audio(self, audio_clip):
-            """Mock set_audio method for testing."""
+        def with_audio(self, audio_clip):
+            """Mock with_audio method for testing."""
             new_clip = ImageClip()
             new_clip.duration = self.duration
             new_clip.size = self.size
@@ -85,8 +84,8 @@ except ImportError:
             new_clip.audio = audio_clip
             return new_clip
             
-        def subclip(self, start_time, end_time=None):
-            """Mock subclip method for testing."""
+        def subclipped(self, start_time, end_time=None):
+            """Mock subclipped method for testing."""
             new_clip = ImageClip()
             new_clip.duration = (end_time or self.duration) - start_time if self.duration else 10.0
             new_clip.size = self.size
@@ -99,8 +98,8 @@ except ImportError:
             self.duration = None
             self.fps = 44100
             
-        def subclip(self, start_time, end_time=None):
-            """Mock subclip method for testing."""
+        def subclipped(self, start_time, end_time=None):
+            """Mock subclipped method for testing."""
             new_clip = AudioFileClip()
             new_clip.duration = (end_time or self.duration) - start_time if self.duration else 10.0
             new_clip.fps = self.fps

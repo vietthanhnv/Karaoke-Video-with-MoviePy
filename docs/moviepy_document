@@ -1,0 +1,133 @@
+# MoviePy v2 Migration Guide
+
+## Overview
+Your application was written for MoviePy v1, but MoviePy v2 introduced breaking changes. This document outlines the key changes and how to update your code.
+
+## Key API Changes in MoviePy v2
+
+### 1. Method Name Changes
+MoviePy v2 changed from `.set_*()` methods to `.with_*()` methods:
+
+**v1 (Old)** → **v2 (New)**
+- `.set_duration(duration)` → `.with_duration(duration)`
+- `.set_position(position)` → `.with_position(position)`
+- `.set_start(start_time)` → `.with_start(start_time)`
+- `.set_end(end_time)` → `.with_end(end_time)`
+- `.set_fps(fps)` → `.with_fps(fps)`
+- `.resize(size)` → `.resized(size)`
+- `.crossfadein(duration)` → `.with_effects([vfx.CrossFadeIn(duration)])`
+- `.crossfadeout(duration)` → `.with_effects([vfx.CrossFadeOut(duration)])`
+
+### 2. Import Changes
+**v1:**
+```python
+from moviepy.editor import *
+```
+
+**v2:**
+```python
+from moviepy import VideoFileClip, TextClip, CompositeVideoClip, ColorClip, ImageClip
+from moviepy import vfx, afx  # For effects
+```
+
+### 3. Effects System
+MoviePy v2 introduced a new effects system:
+
+**v1:**
+```python
+clip = clip.crossfadein(1.0).crossfadeout(1.0)
+```
+
+**v2:**
+```python
+from moviepy import vfx
+clip = clip.with_effects([vfx.CrossFadeIn(1.0), vfx.CrossFadeOut(1.0)])
+```
+
+### 4. Audio Effects
+**v1:**
+```python
+from moviepy.audio.fx import audio_loop
+looped = audio_loop(audio_clip, duration=10)
+```
+
+**v2:**
+```python
+from moviepy import afx
+looped = audio_clip.with_effects([afx.AudioLoop(duration=10)])
+```
+
+### 5. Text Clip Changes
+**v1:**
+```python
+text_clip = TextClip("Hello", fontsize=50, color='white')
+```
+
+**v2:**
+```python
+text_clip = TextClip(text="Hello", font_size=50, color='white')
+```
+
+## Common Patterns in Your Code
+
+### Pattern 1: Basic Clip Setup
+**Before:**
+```python
+text_clip = TextClip(text, **params)
+text_clip = text_clip.set_duration(duration)
+text_clip = text_clip.set_start(start_time)
+text_clip = text_clip.set_position(position)
+```
+
+**After:**
+```python
+text_clip = TextClip(text=text, **params)
+text_clip = text_clip.with_duration(duration).with_start(start_time).with_position(position)
+```
+
+### Pattern 2: Fade Effects
+**Before:**
+```python
+clip = clip.crossfadein(fade_in).crossfadeout(fade_out)
+```
+
+**After:**
+```python
+from moviepy import vfx
+clip = clip.with_effects([vfx.CrossFadeIn(fade_in), vfx.CrossFadeOut(fade_out)])
+```
+
+### Pattern 3: Audio Looping
+**Before:**
+```python
+from moviepy import afx
+looped_audio = afx.audio_loop(audio_clip, duration=duration)
+```
+
+**After:**
+```python
+from moviepy import afx
+looped_audio = audio_clip.with_effects([afx.AudioLoop(duration=duration)])
+```
+
+## Files That Need Updates
+The following files in your codebase need to be updated:
+
+1. `src/subtitle_creator/preview_engine.py`
+2. `src/subtitle_creator/effects/text_styling.py`
+3. `src/subtitle_creator/effects/particles.py`
+4. `src/subtitle_creator/effects/animation.py`
+5. `src/subtitle_creator/effects/base.py`
+6. `src/subtitle_creator/app_controller.py`
+7. `src/subtitle_creator/media_manager.py`
+8. `src/subtitle_creator/export_manager.py`
+
+## Testing
+After making these changes, test with:
+```bash
+python -m pytest tests/ -v
+```
+
+## References
+- [MoviePy v2 Documentation](https://zulko.github.io/moviepy/)
+- [Migration Guide](https://zulko.github.io/moviepy/getting_started/updating_to_v2.html)

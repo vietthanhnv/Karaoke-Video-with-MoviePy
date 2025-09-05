@@ -24,6 +24,14 @@ class MockVideoClip:
         self.duration = duration
         self.size = size
         self.fps = fps
+        self.layer_index = 0
+        self.audio = None
+        self.start = 0
+        self.mask = None
+    
+    @property
+    def end(self):
+        return self.start + self.duration
     
     def set_duration(self, duration):
         self.duration = duration
@@ -33,9 +41,21 @@ class MockVideoClip:
         self.size = size
         return self
     
+    def resized(self, size):
+        """MoviePy v2 method."""
+        return self.resize(size)
+    
     def set_fps(self, fps):
         self.fps = fps
         return self
+    
+    def with_fps(self, fps):
+        """MoviePy v2 method."""
+        return self.set_fps(fps)
+    
+    def with_duration(self, duration):
+        """MoviePy v2 method."""
+        return self.set_duration(duration)
     
     def write_videofile(self, filename, **kwargs):
         # Simulate realistic export time

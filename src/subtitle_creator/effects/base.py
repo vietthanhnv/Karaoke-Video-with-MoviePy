@@ -13,7 +13,7 @@ from pathlib import Path
 
 # Optional import for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy.editor import VideoClip, CompositeVideoClip, TextClip
+    from moviepy import VideoClip, CompositeVideoClip, TextClip
     MOVIEPY_AVAILABLE = True
 except ImportError:
     # Create placeholders for development/testing
@@ -22,11 +22,11 @@ except ImportError:
             self.duration = 0
             self.size = (1920, 1080)
         
-        def set_duration(self, duration):
+        def with_duration(self, duration):
             self.duration = duration
             return self
         
-        def set_position(self, position):
+        def with_position(self, position):
             return self
     
     class CompositeVideoClip:
@@ -296,20 +296,19 @@ class BaseEffect(Effect):
         """
         if not MOVIEPY_AVAILABLE:
             # Return placeholder for testing
-            clip = TextClip(text)
+            clip = TextClip(text=text)
             clip.duration = end_time - start_time
             return clip
         
         # Default text clip settings
         default_kwargs = {
-            'fontsize': 50,
-            'color': 'white',
-            'font': 'Arial-Bold'
+            'font_size': 50,
+            'color': 'white'
         }
         default_kwargs.update(kwargs)
         
-        text_clip = TextClip(text, **default_kwargs)
-        text_clip = text_clip.set_duration(end_time - start_time)
+        text_clip = TextClip(text=text, **default_kwargs)
+        text_clip = text_clip.with_duration(end_time - start_time)
         
         return text_clip
     

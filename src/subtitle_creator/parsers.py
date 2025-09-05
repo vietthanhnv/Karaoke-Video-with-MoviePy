@@ -9,8 +9,8 @@ import json
 import re
 import os
 from typing import Dict, Any, List, Optional, Tuple
-from .interfaces import SubtitleParser, SubtitleData, SubtitleLine, WordTiming, ParseError
-from .models import ValidationError
+from .interfaces import SubtitleParser, ParseError
+from .models import SubtitleData, SubtitleLine, WordTiming, ValidationError
 
 
 class SubtitleParserFactory:
@@ -159,21 +159,44 @@ class JSONSubtitleParser(SubtitleParser):
                 segment_id = segment.get('segment_id', i)
                 words = words_by_segment.get(segment_id, [])
                 
+                # Get segment timing
+                segment_start = float(segment['start_time'])
+                segment_end = float(segment['end_time'])
+                
+                # Filter words to only include those within the segment time range
+                valid_words = []
+                for word in words:
+                    # Only include words that are within the segment time range
+                    if (word.start_time >= segment_start and 
+                        word.end_time <= segment_end):
+                        valid_words.append(word)
+                
                 # Sort words by start time
-                words.sort(key=lambda w: w.start_time)
+                valid_words.sort(key=lambda w: w.start_time)
                 
                 # Skip lines with no text or "[No text]" placeholder
                 text = segment.get('text', '').strip()
                 if not text or text == '[No text]':
                     continue
                 
-                line = SubtitleLine(
-                    start_time=float(segment['start_time']),
-                    end_time=float(segment['end_time']),
-                    text=text,
-                    words=words,
-                    style_overrides={}
-                )
+                # Try to create line with word timings, fall back to no words if validation fails
+                try:
+                    line = SubtitleLine(
+                        start_time=segment_start,
+                        end_time=segment_end,
+                        text=text,
+                        words=valid_words,
+                        style_overrides={}
+                    )
+                except ValidationError:
+                    # If word timing validation fails, create line without word timings
+                    line = SubtitleLine(
+                        start_time=segment_start,
+                        end_time=segment_end,
+                        text=text,
+                        words=[],
+                        style_overrides={}
+                    )
                 lines.append(line)
                 
             except (KeyError, ValueError, ValidationError) as e:

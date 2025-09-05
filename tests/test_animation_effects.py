@@ -50,12 +50,19 @@ class MockVideoClip:
         self.size = (1920, 1080)
         self.start = 0
         self.pos = ('center', 'bottom')
+        self.fps = 24
+        self.layer_index = 0
+        self.audio = None
     
-    def set_duration(self, duration):
+    @property
+    def end(self):
+        return self.start + self.duration
+    
+    def with_duration(self, duration):
         self.duration = duration
         return self
     
-    def set_start(self, start):
+    def with_start(self, start):
         self.start = start
         return self
     

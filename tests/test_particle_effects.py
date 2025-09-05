@@ -586,9 +586,9 @@ class TestCustomImageParticleEffect:
         sprite = effect._get_particle_sprite()
         
         mock_image_clip.assert_called_once_with('/path/to/image.png')
-        mock_clip.resize.assert_called_once_with(1.5)
+        mock_clip.resized.assert_called_once_with(1.5)
         # sprite should be the resized clip
-        assert sprite == mock_clip.resize.return_value
+        assert sprite == mock_clip.resized.return_value
 
 
 class TestParticleEffectsIntegration:
@@ -659,8 +659,8 @@ class TestParticleEffectsIntegration:
         with patch('src.subtitle_creator.effects.particles.MOVIEPY_AVAILABLE', True):
             result_clip = effect._apply_particle_animation(mock_clip, config, 2.0)
             
-            # Verify that set_position was called (physics animation applied)
-            mock_clip.set_position.assert_called_once()
+            # Verify that with_position was called (physics animation applied)
+            mock_clip.with_position.assert_called_once()
     
     def test_multiple_particle_effects_composition(self):
         """Test compositing multiple particle effects together."""

@@ -14,8 +14,7 @@ import weakref
 
 # Optional imports for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy.editor import VideoClip, CompositeVideoClip, ColorClip
-    from moviepy.video.fx import resize
+    from moviepy import VideoClip, CompositeVideoClip, ColorClip
     import numpy as np
     MOVIEPY_AVAILABLE = True
 except ImportError:
@@ -26,7 +25,7 @@ except ImportError:
             self.size = (1920, 1080)
             self.fps = 24
         
-        def set_duration(self, duration):
+        def with_duration(self, duration):
             self.duration = duration
             return self
         
@@ -223,7 +222,7 @@ class PreviewEngine(PreviewEngineInterface):
             
             # Set preview properties
             if MOVIEPY_AVAILABLE:
-                preview_clip = preview_clip.set_fps(self.preview_fps)
+                preview_clip = preview_clip.with_fps(self.preview_fps)
             
             # Store current clip for playback
             self._current_clip = preview_clip
@@ -258,7 +257,7 @@ class PreviewEngine(PreviewEngineInterface):
             original_duration = getattr(background, 'duration', None)
             
             # Resize to preview resolution
-            optimized = background.resize(self.preview_resolution)
+            optimized = background.resized(self.preview_resolution)
             
             # Ensure duration is preserved
             if original_duration is not None and not hasattr(optimized, 'duration'):
@@ -270,7 +269,7 @@ class PreviewEngine(PreviewEngineInterface):
             if hasattr(optimized, 'set_fps') and self.quality_factor < 1.0:
                 original_fps = getattr(background, 'fps', 24)
                 target_fps = max(1, int(original_fps * self.quality_factor))
-                optimized = optimized.set_fps(target_fps)
+                optimized = optimized.with_fps(target_fps)
             
             return optimized
             
@@ -611,13 +610,13 @@ class PreviewEngine(PreviewEngineInterface):
                     if hasattr(preview_clip, 'duration') and hasattr(audio_clip, 'duration'):
                         if preview_clip.duration > audio_clip.duration:
                             # Loop audio if video is longer
-                            from moviepy.editor import afx
-                            looped_audio = afx.audio_loop(audio_clip, duration=preview_clip.duration)
-                            preview_clip = preview_clip.set_audio(looped_audio)
+                            from moviepy import afx
+                            looped_audio = audio_clip.with_effects([afx.AudioLoop(duration=preview_clip.duration)])
+                            preview_clip = preview_clip.with_audio(looped_audio)
                         else:
                             # Trim audio to match video duration
-                            trimmed_audio = audio_clip.subclip(0, preview_clip.duration)
-                            preview_clip = preview_clip.set_audio(trimmed_audio)
+                            trimmed_audio = audio_clip.subclipped(0, preview_clip.duration)
+                            preview_clip = preview_clip.with_audio(trimmed_audio)
                 except Exception as e:
                     print(f"Warning: Audio sync failed: {e}")
                     # Continue without audio if sync fails
@@ -779,9 +778,9 @@ class PreviewEngine(PreviewEngineInterface):
             if MOVIEPY_AVAILABLE:
                 try:
                     # Create temporary clip from frame for resizing
-                    from moviepy.editor import ImageClip
+                    from moviepy import ImageClip
                     temp_clip = ImageClip(frame, duration=0.1)
-                    resized_clip = temp_clip.resize(size)
+                    resized_clip = temp_clip.resized(size)
                     thumbnail = resized_clip.get_frame(0)
                     return thumbnail
                 except ImportError:
@@ -813,7 +812,7 @@ class PreviewEngine(PreviewEngineInterface):
             # Save frame as image
             if MOVIEPY_AVAILABLE:
                 try:
-                    from moviepy.editor import ImageClip
+                    from moviepy import ImageClip
                     temp_clip = ImageClip(frame, duration=0.1)
                     temp_clip.save_frame(output_path, t=0)
                     return True

@@ -19,7 +19,7 @@ from PyQt6.QtWidgets import QMessageBox, QFileDialog
 
 # Optional import for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy.editor import VideoClip, AudioFileClip
+    from moviepy import VideoClip, AudioFileClip
     MOVIEPY_AVAILABLE = True
 except ImportError:
     # Create placeholders for development/testing
@@ -174,6 +174,7 @@ class AppController(QObject):
         self.playback_state_changed.connect(self.main_window.set_playback_state)
         self.status_message.connect(self.main_window.show_status_message)
         self.error_occurred.connect(self._show_error_dialog)
+        self.subtitle_data_changed.connect(self._update_subtitle_editor)
         
         # Connect GUI component signals
         self._connect_gui_component_signals()
@@ -907,21 +908,21 @@ class AppController(QObject):
                             # Loop audio if video is longer
                             if MOVIEPY_AVAILABLE:
                                 try:
-                                    from moviepy.editor import afx
-                                    looped_audio = afx.audio_loop(self._audio_clip, duration=preview_duration)
-                                    preview_clip = preview_clip.set_audio(looped_audio)
+                                    from moviepy import afx
+                                    looped_audio = self._audio_clip.with_effects([afx.AudioLoop(duration=preview_duration)])
+                                    preview_clip = preview_clip.with_audio(looped_audio)
                                 except (ImportError, AttributeError):
                                     # Fallback: just set the audio as-is
-                                    preview_clip = preview_clip.set_audio(self._audio_clip)
+                                    preview_clip = preview_clip.with_audio(self._audio_clip)
                         else:
                             # Trim audio to match video duration
-                            trimmed_audio = self._audio_clip.subclip(0, preview_duration)
-                            preview_clip = preview_clip.set_audio(trimmed_audio)
+                            trimmed_audio = self._audio_clip.subclipped(0, preview_duration)
+                            preview_clip = preview_clip.with_audio(trimmed_audio)
                 except (AttributeError, TypeError) as e:
                     print(f"Warning: Could not sync audio with video: {e}")
                     # Just set audio without duration matching
                     try:
-                        preview_clip = preview_clip.set_audio(self._audio_clip)
+                        preview_clip = preview_clip.with_audio(self._audio_clip)
                     except Exception:
                         pass  # Continue without audio if setting fails
             
@@ -1192,6 +1193,13 @@ class AppController(QObject):
         if hasattr(selection, 'line_indices') and selection.line_indices:
             first_line_index = min(selection.line_indices)
             self._on_subtitle_line_selected(first_line_index)
+    
+    def _update_subtitle_editor(self) -> None:
+        """Update the subtitle editor with current subtitle data."""
+        if self.main_window and self.subtitle_engine.has_data:
+            subtitle_editor = self.main_window.get_subtitle_editor()
+            if subtitle_editor:
+                subtitle_editor.set_subtitle_data(self.subtitle_engine.subtitle_data)
     
     def _on_preview_play_requested(self) -> None:
         """Handle play request from preview panel."""

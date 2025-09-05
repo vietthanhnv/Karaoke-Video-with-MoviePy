@@ -24,13 +24,40 @@ class MockVideoClip:
         self.duration = duration
         self.size = size
         self.fps = fps
+        self.layer_index = 0
+        self.audio = None
+        self.start = 0
+        self.mask = None
+    
+    @property
+    def end(self):
+        return self.start + self.duration
     
     def resize(self, new_size):
         mock_clip = MockVideoClip(self.duration, new_size, self.fps)
         return mock_clip
     
+    def resized(self, new_size):
+        """MoviePy v2 method."""
+        return self.resize(new_size)
+    
     def set_fps(self, new_fps):
         mock_clip = MockVideoClip(self.duration, self.size, new_fps)
+        return mock_clip
+    
+    def with_fps(self, new_fps):
+        """MoviePy v2 method."""
+        return self.set_fps(new_fps)
+    
+    def with_duration(self, duration):
+        """MoviePy v2 method."""
+        mock_clip = MockVideoClip(duration, self.size, self.fps)
+        return mock_clip
+    
+    def with_start(self, start_time):
+        """MoviePy v2 method."""
+        mock_clip = MockVideoClip(self.duration, self.size, self.fps)
+        mock_clip.start = start_time
         return mock_clip
     
     def get_frame(self, t):

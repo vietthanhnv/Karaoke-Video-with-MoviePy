@@ -16,8 +16,7 @@ from enum import Enum
 
 # Optional imports for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy.editor import VideoClip, CompositeVideoClip, ColorClip
-    from moviepy.video.fx import resize
+    from moviepy import VideoClip, CompositeVideoClip, ColorClip
     import numpy as np
     MOVIEPY_AVAILABLE = True
 except ImportError:
@@ -28,7 +27,7 @@ except ImportError:
             self.size = (1920, 1080)
             self.fps = 24
         
-        def set_duration(self, duration):
+        def with_duration(self, duration):
             self.duration = duration
             return self
         
@@ -464,7 +463,7 @@ class ExportManager(ExportManagerInterface):
             
             # Set final clip properties
             if MOVIEPY_AVAILABLE:
-                final_clip = final_clip.set_fps(quality_settings['fps'])
+                final_clip = final_clip.with_fps(quality_settings['fps'])
             
             self._current_clip = final_clip
             return final_clip
@@ -524,12 +523,12 @@ class ExportManager(ExportManagerInterface):
         try:
             # Resize to target resolution
             target_resolution = quality_settings['resolution']
-            optimized = background.resize(target_resolution)
+            optimized = background.resized(target_resolution)
             
             # Set target FPS
             target_fps = quality_settings['fps']
-            if hasattr(optimized, 'set_fps'):
-                optimized = optimized.set_fps(target_fps)
+            if hasattr(optimized, 'with_fps'):
+                optimized = optimized.with_fps(target_fps)
             
             return optimized
             

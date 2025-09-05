@@ -43,11 +43,100 @@ class MockSubtitleData:
     lines: List[MockSubtitleLine]
 
 
+class MockMask:
+    """Mock mask for testing."""
+    def __init__(self):
+        self.layer_index = 0
+        self.start = 0
+        self.duration = 0
+        self.pos = (0, 0)
+        self.audio = None
+        self.size = (1920, 1080)
+        self.fps = 24
+    
+    @property
+    def end(self):
+        return self.start + self.duration
+    
+    def with_position(self, pos):
+        mock_mask = MockMask()
+        mock_mask.__dict__.update(self.__dict__)
+        mock_mask.pos = pos
+        return mock_mask
+    
+    def with_end(self, end_time):
+        mock_mask = MockMask()
+        mock_mask.__dict__.update(self.__dict__)
+        mock_mask.duration = end_time - self.start
+        return mock_mask
+    
+    def with_start(self, start_time, change_end=True):
+        mock_mask = MockMask()
+        mock_mask.__dict__.update(self.__dict__)
+        mock_mask.start = start_time
+        if not change_end:
+            mock_mask.duration = self.duration
+        return mock_mask
+    
+    def with_layer_index(self, layer_index):
+        mock_mask = MockMask()
+        mock_mask.__dict__.update(self.__dict__)
+        mock_mask.layer_index = layer_index
+        return mock_mask
+
+
 class MockVideoClip:
     """Mock VideoClip for testing."""
     def __init__(self):
         self.duration = 0
         self.size = (1920, 1080)
+        self.layer_index = 0
+        self.fps = 24
+        self.audio = None
+        self.start = 0
+        self.mask = None
+        self.pos = (0, 0)
+    
+    @property
+    def end(self):
+        return self.start + self.duration
+    
+    def with_mask(self):
+        """Return self with a mock mask."""
+        mock_clip = MockVideoClip()
+        mock_clip.__dict__.update(self.__dict__)
+        mock_clip.mask = MockMask()
+        return mock_clip
+    
+    def with_position(self, pos):
+        """Mock position setting."""
+        mock_clip = MockVideoClip()
+        mock_clip.__dict__.update(self.__dict__)
+        mock_clip.pos = pos
+        return mock_clip
+    
+    def with_end(self, end_time):
+        """Mock end time setting."""
+        mock_clip = MockVideoClip()
+        mock_clip.__dict__.update(self.__dict__)
+        mock_clip.duration = end_time - self.start
+        return mock_clip
+    
+    def with_start(self, start_time, change_end=True):
+        """Mock start time setting."""
+        mock_clip = MockVideoClip()
+        mock_clip.__dict__.update(self.__dict__)
+        mock_clip.start = start_time
+        if not change_end:
+            mock_clip.duration = self.duration
+        return mock_clip
+    
+    def with_layer_index(self, layer_index):
+        """Mock layer index setting."""
+        mock_clip = MockVideoClip()
+        mock_clip.__dict__.update(self.__dict__)
+        mock_clip.layer_index = layer_index
+        return mock_clip
 
 
 class TestAnimationEffectsIntegration:
@@ -128,8 +217,14 @@ class TestAnimationEffectsIntegration:
         # Apply effects
         result = system.apply_effects(clip, subtitle_data)
         
-        # Should return the original clip in test environment
-        assert result == clip
+        # Should return a clip (could be CompositeVideoClip or MockVideoClip in test mode)
+        assert result is not None
+        # In test mode with mock objects, we get the original mock clip back
+        if hasattr(result, '__class__') and 'Mock' in result.__class__.__name__:
+            assert result == clip
+        else:
+            from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
+            assert isinstance(result, CompositeVideoClip)
         
         # Verify effects are active
         active_effects = system.get_active_effects()
