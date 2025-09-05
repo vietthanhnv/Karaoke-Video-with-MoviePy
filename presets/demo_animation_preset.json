@@ -1,0 +1,43 @@
+{
+  "name": "demo_animation_preset",
+  "description": "Demo preset with karaoke and fade effects",
+  "effects": [
+    {
+      "name": "KaraokeHighlightEffect",
+      "class": "KaraokeHighlightEffect",
+      "parameters": {
+        "default_color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "highlight_color": [
+          255,
+          100,
+          100,
+          255
+        ],
+        "transition_duration": 0.1,
+        "highlight_mode": "word",
+        "glow_enabled": false,
+        "glow_intensity": 0.5
+      }
+    },
+    {
+      "name": "FadeTransitionEffect",
+      "class": "FadeTransitionEffect",
+      "parameters": {
+        "fade_type": "in",
+        "fade_in_duration": 1.0,
+        "fade_out_duration": 0.5,
+        "fade_curve": "linear",
+        "start_opacity": 0.0,
+        "end_opacity": 0.0,
+        "hold_opacity": 1.0
+      }
+    }
+  ],
+  "created_at": "E:\\Tools\\Karaoke Video with MoviePy",
+  "version": "1.0"
+}

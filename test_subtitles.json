@@ -1,0 +1,32 @@
+{
+  "lines": [
+    {
+      "start_time": 0.0,
+      "end_time": 3.0,
+      "text": "Hello, this is a test subtitle",
+      "style": {
+        "font_size": 24,
+        "color": "#FFFFFF"
+      }
+    },
+    {
+      "start_time": 3.5,
+      "end_time": 6.0,
+      "text": "This is the second line",
+      "style": {
+        "font_size": 24,
+        "color": "#FFFFFF"
+      }
+    }
+  ],
+  "global_style": {
+    "font_family": "Arial",
+    "font_size": 24,
+    "color": "#FFFFFF",
+    "background_color": "#000000"
+  },
+  "metadata": {
+    "title": "Test Subtitles",
+    "duration": 6.0
+  }
+}

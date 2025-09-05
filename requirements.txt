@@ -1,0 +1,27 @@
+# Core video processing
+moviepy>=1.0.3
+numpy>=1.21.0
+pillow>=8.3.0
+
+# Audio processing
+pydub>=0.25.1
+librosa>=0.9.0
+scipy>=1.7.0
+
+# GUI framework
+PyQt6>=6.4.0
+
+# Text and typography
+fonttools>=4.33.0
+matplotlib>=3.5.0
+
+# Development and testing
+pytest>=7.0.0
+pytest-qt>=4.2.0
+black>=22.0.0
+flake8>=4.0.0
+
+# Build and packaging
+pyinstaller>=5.0.0
+setuptools>=60.0.0
+wheel>=0.37.0

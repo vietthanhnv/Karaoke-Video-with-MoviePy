@@ -1,0 +1,42 @@
+{
+  "name": "test_animation_preset",
+  "description": "Test preset with animation effects",
+  "effects": [
+    {
+      "name": "KaraokeHighlightEffect",
+      "class": "KaraokeHighlightEffect",
+      "parameters": {
+        "default_color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "highlight_color": [
+          255,
+          255,
+          0,
+          255
+        ],
+        "transition_duration": 0.2,
+        "highlight_mode": "word",
+        "glow_enabled": false,
+        "glow_intensity": 0.5
+      }
+    },
+    {
+      "name": "ScaleBounceEffect",
+      "class": "ScaleBounceEffect",
+      "parameters": {
+        "bounce_scale": 1.3,
+        "bounce_duration": 0.5,
+        "bounce_count": 3,
+        "trigger_mode": "entrance",
+        "easing_function": "bounce",
+        "scale_origin": "center"
+      }
+    }
+  ],
+  "created_at": "E:\\Tools\\Karaoke Video with MoviePy",
+  "version": "1.0"
+}

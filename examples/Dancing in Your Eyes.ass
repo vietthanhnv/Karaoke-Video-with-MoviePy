@@ -1,0 +1,43 @@
+[Script Info]
+Title: Karaoke Subtitles
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.601
+PlayResX: 1920
+PlayResY: 1080
+
+[Aegisub Project]
+Audio File: 
+Video File: 
+Video AR Mode: 4
+Video AR Value: 1.777778
+Video Zoom Percent: 0.500000
+Scroll Position: 0
+Active Line: 0
+Video Position: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,2.0,0.0,2,10,10,10,1
+Style: Karaoke,Arial,20,&H0000FFFF,&H00FF0000,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,2.0,0.0,2,10,10,10,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:21.30,0:00:29.44,Karaoke,,0,0,0,,{\k107}Under {\k58}the {\k39}glow {\k64}of {\k16}the {\k55}silver {\k58}moon, {\k16}I {\k35}find {\k41}my {\k74}heart {\k35}in {\k10}a {\k41}tender {\k58}tune.
+Dialogue: 0,0:00:29.44,0:00:38.32,Karaoke,,0,0,0,,{\k205}Every {\k37}step {\k50}brings {\k25}me {\k53}close {\k52}to {\k61}you, {\k57}every {\k82}moment {\k60}feels {\k65}so {\k134}true.
+Dialogue: 0,0:00:39.06,0:00:43.14,Karaoke,,0,0,0,,{\k57}Soft {\k39}is {\k32}the {\k56}night {\k35}as {\k21}it {\k42}holds {\k50}our {\k71}song.
+Dialogue: 0,0:00:43.74,0:00:51.48,Karaoke,,0,0,0,,{\k19}In {\k42}your {\k103}embraces {\k48}where {\k51}I {\k67}belong, {\k96}every {\k84}glance {\k50}is {\k17}a {\k53}sweet {\k79}surprise.
+Dialogue: 0,0:00:51.98,0:00:55.68,Karaoke,,0,0,0,,{\k10}I {\k32}keep {\k67}dancing {\k85}in {\k57}your {\k124}eyes.
+Dialogue: 0,0:00:56.68,0:01:02.00,Karaoke,,0,0,0,,{\k70}Round {\k60}and {\k132}round {\k73}the {\k42}wall {\k80}fades {\k97}away.
+Dialogue: 0,0:01:03.28,0:01:10.84,Karaoke,,0,0,0,,{\k134}Love {\k59}is {\k20}the {\k121}music {\k235}and {\k42}we {\k21}will {\k120}sway.
+Dialogue: 0,0:01:13.30,0:01:24.04,Karaoke,,0,0,0,,{\k140}Hand {\k43}in {\k104}hand {\k93}through {\k23}the {\k93}gentle {\k179}sky, {\k175}forever {\k144}dancing.
+Dialogue: 0,0:01:25.68,0:01:28.88,Karaoke,,0,0,0,,{\k89}In {\k62}your {\k167}eyes.
+Dialogue: 0,0:01:30.18,0:01:39.64,Karaoke,,0,0,0,,{\k119}No {\k64}time, {\k15}no {\k57}fear, {\k28}just {\k29}you {\k68}and {\k50}me {\k103}spinning {\k42}like {\k78}waves {\k42}on {\k18}a {\k85}timeless {\k65}sea.
+Dialogue: 0,0:01:40.38,0:01:47.44,Karaoke,,0,0,0,,{\k88}Every {\k53}heart {\k101}retails {\k34}me, {\k23}it's {\k35}true, {\k29}my {\k57}forever {\k79}begins {\k74}with {\k67}you.
+Dialogue: 0,0:02:05.58,0:02:12.38,Karaoke,,0,0,0,,{\k140}Round {\k51}and {\k119}round {\k98}the {\k45}world {\k58}fades {\k165}away.
+Dialogue: 0,0:02:13.58,0:02:20.74,Karaoke,,0,0,0,,{\k89}Love {\k54}is {\k21}the {\k129}music {\k220}and {\k51}we {\k37}will {\k110}sway.
+Dialogue: 0,0:02:23.08,0:02:33.86,Karaoke,,0,0,0,,{\k140}Hand {\k43}in {\k74}hand {\k128}through {\k24}the {\k93}gentle {\k121}sky, {\k154}forever {\k168}dancing.
+Dialogue: 0,0:02:35.64,0:02:38.26,Karaoke,,0,0,0,,{\k76}In {\k51}your {\k134}eyes.
+Dialogue: 0,0:03:19.32,0:03:20.72,Karaoke,,0,0,0,,{\k140}Round {\k10}and {\k10}round {\k10}the {\k10}wall {\k10}fades {\k10}away.
+Dialogue: 0,0:03:21.72,0:03:22.06,Karaoke,,0,0,0,,{\k69}Round {\k10}and {\k10}round {\k10}the {\k10}wall {\k10}fades {\k10}away.

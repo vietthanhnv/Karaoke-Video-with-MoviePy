@@ -1,0 +1,108 @@
+{
+  "name": "celebration_combo",
+  "description": "Hearts, stars, and sparkles for celebrations",
+  "effects": [
+    {
+      "name": "HeartParticleEffect",
+      "class": "HeartParticleEffect",
+      "parameters": {
+        "particle_count": 10,
+        "emission_rate": 10.0,
+        "particle_lifetime": 2.0,
+        "emission_area": [
+          100,
+          50
+        ],
+        "velocity_range": [
+          50,
+          150
+        ],
+        "size_range": [
+          0.5,
+          1.5
+        ],
+        "gravity": 0.0,
+        "wind_force": 0.0,
+        "fade_in_duration": 0.2,
+        "fade_out_duration": 0.5,
+        "heart_color": [
+          255,
+          20,
+          147,
+          255
+        ],
+        "heart_size": 24,
+        "pulse_enabled": true,
+        "pulse_rate": 1.5,
+        "float_pattern": "rising"
+      }
+    },
+    {
+      "name": "StarParticleEffect",
+      "class": "StarParticleEffect",
+      "parameters": {
+        "particle_count": 15,
+        "emission_rate": 10.0,
+        "particle_lifetime": 2.0,
+        "emission_area": [
+          100,
+          50
+        ],
+        "velocity_range": [
+          50,
+          150
+        ],
+        "size_range": [
+          0.5,
+          1.5
+        ],
+        "gravity": 0.0,
+        "wind_force": 0.0,
+        "fade_in_duration": 0.2,
+        "fade_out_duration": 0.5,
+        "star_color": [
+          255,
+          255,
+          0,
+          255
+        ],
+        "star_points": 5,
+        "twinkle_enabled": true,
+        "twinkle_rate": 2.0,
+        "trail_enabled": false
+      }
+    },
+    {
+      "name": "SparkleParticleEffect",
+      "class": "SparkleParticleEffect",
+      "parameters": {
+        "particle_count": 20,
+        "emission_rate": 10.0,
+        "particle_lifetime": 2.0,
+        "emission_area": [
+          100,
+          50
+        ],
+        "velocity_range": [
+          50,
+          150
+        ],
+        "size_range": [
+          0.5,
+          1.5
+        ],
+        "gravity": 0.0,
+        "wind_force": 0.0,
+        "fade_in_duration": 0.2,
+        "fade_out_duration": 0.5,
+        "sparkle_size_variation": 0.8,
+        "flash_duration": 0.1,
+        "burst_mode": true,
+        "burst_interval": 1.0,
+        "radial_spread": true
+      }
+    }
+  ],
+  "created_at": "E:\\Tools\\Karaoke Video with MoviePy",
+  "version": "1.0"
+}

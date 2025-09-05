@@ -1,0 +1,1 @@
+"""Test suite for Subtitle Creator with Effects application."""

@@ -1,0 +1,1396 @@
+{
+  "metadata": {
+    "export_timestamp": "2025-09-04T15:28:40.908265",
+    "format_version": "1.0",
+    "exporter": "lyric-to-subtitle-app",
+    "total_segments": 18,
+    "total_words": 148,
+    "audio_duration": 202.06,
+    "source_file": "C:\\Users\\taikh\\AppData\\Local\\Temp\\demucs_4mah11ba\\Dancing in Your Eyes_(Vocals)_UVR_MDXNET_KARA_2.wav",
+    "average_confidence": 0.742
+  },
+  "segments": [
+    {
+      "start_time": 21.3,
+      "end_time": 29.44,
+      "duration": 8.14,
+      "text": "Under the glow of the silver moon, I find my heart in a tender tune.",
+      "confidence": 0.508,
+      "segment_id": 0
+    },
+    {
+      "start_time": 29.44,
+      "end_time": 38.32,
+      "duration": 8.88,
+      "text": "Every step brings me close to you, every moment feels so true.",
+      "confidence": 0.786,
+      "segment_id": 1
+    },
+    {
+      "start_time": 39.06,
+      "end_time": 43.14,
+      "duration": 4.08,
+      "text": "Soft is the night as it holds our song.",
+      "confidence": 0.786,
+      "segment_id": 2
+    },
+    {
+      "start_time": 43.74,
+      "end_time": 51.48,
+      "duration": 7.74,
+      "text": "In your embraces where I belong, every glance is a sweet surprise.",
+      "confidence": 0.786,
+      "segment_id": 3
+    },
+    {
+      "start_time": 51.98,
+      "end_time": 55.68,
+      "duration": 3.7,
+      "text": "I keep dancing in your eyes.",
+      "confidence": 0.786,
+      "segment_id": 4
+    },
+    {
+      "start_time": 56.68,
+      "end_time": 62.0,
+      "duration": 5.32,
+      "text": "Round and round the wall fades away.",
+      "confidence": 0.772,
+      "segment_id": 5
+    },
+    {
+      "start_time": 63.28,
+      "end_time": 70.84,
+      "duration": 7.56,
+      "text": "Love is the music and we will sway.",
+      "confidence": 0.772,
+      "segment_id": 6
+    },
+    {
+      "start_time": 73.3,
+      "end_time": 84.04,
+      "duration": 10.74,
+      "text": "Hand in hand through the gentle sky, forever dancing.",
+      "confidence": 0.772,
+      "segment_id": 7
+    },
+    {
+      "start_time": 85.68,
+      "end_time": 88.88,
+      "duration": 3.2,
+      "text": "In your eyes.",
+      "confidence": 0.801,
+      "segment_id": 8
+    },
+    {
+      "start_time": 90.18,
+      "end_time": 99.64,
+      "duration": 9.46,
+      "text": "No time, no fear, just you and me spinning like waves on a timeless sea.",
+      "confidence": 0.801,
+      "segment_id": 9
+    },
+    {
+      "start_time": 100.38,
+      "end_time": 107.44,
+      "duration": 7.06,
+      "text": "Every heart retails me, it's true, my forever begins with you.",
+      "confidence": 0.801,
+      "segment_id": 10
+    },
+    {
+      "start_time": 125.58,
+      "end_time": 132.38,
+      "duration": 6.8,
+      "text": "Round and round the world fades away.",
+      "confidence": 0.783,
+      "segment_id": 11
+    },
+    {
+      "start_time": 133.58,
+      "end_time": 140.74,
+      "duration": 7.16,
+      "text": "Love is the music and we will sway.",
+      "confidence": 0.783,
+      "segment_id": 12
+    },
+    {
+      "start_time": 143.08,
+      "end_time": 153.86,
+      "duration": 10.78,
+      "text": "Hand in hand through the gentle sky, forever dancing.",
+      "confidence": 0.788,
+      "segment_id": 13
+    },
+    {
+      "start_time": 155.64,
+      "end_time": 158.26,
+      "duration": 2.62,
+      "text": "In your eyes.",
+      "confidence": 0.788,
+      "segment_id": 14
+    },
+    {
+      "start_time": 199.32,
+      "end_time": 200.72,
+      "duration": 1.4,
+      "text": "Round and round the wall fades away.",
+      "confidence": 0.599,
+      "segment_id": 15
+    },
+    {
+      "start_time": 201.72,
+      "end_time": 202.06,
+      "duration": 0.34,
+      "text": "Round and round the wall fades away.",
+      "confidence": 0.649,
+      "segment_id": 16
+    },
+    {
+      "start_time": 202.04,
+      "end_time": 203.04,
+      "duration": 1.0,
+      "text": "[No text]",
+      "confidence": 0.596,
+      "segment_id": 17
+    }
+  ],
+  "word_segments": [
+    {
+      "word": "Under",
+      "start_time": 21.3,
+      "end_time": 22.38,
+      "duration": 1.08,
+      "confidence": 0.465,
+      "segment_id": 0
+    },
+    {
+      "word": "the",
+      "start_time": 22.38,
+      "end_time": 22.96,
+      "duration": 0.58,
+      "confidence": 0.995,
+      "segment_id": 0
+    },
+    {
+      "word": "glow",
+      "start_time": 22.96,
+      "end_time": 23.36,
+      "duration": 0.4,
+      "confidence": 0.976,
+      "segment_id": 0
+    },
+    {
+      "word": "of",
+      "start_time": 23.36,
+      "end_time": 24.0,
+      "duration": 0.64,
+      "confidence": 0.996,
+      "segment_id": 0
+    },
+    {
+      "word": "the",
+      "start_time": 24.0,
+      "end_time": 24.16,
+      "duration": 0.16,
+      "confidence": 0.988,
+      "segment_id": 0
+    },
+    {
+      "word": "silver",
+      "start_time": 24.16,
+      "end_time": 24.72,
+      "duration": 0.56,
+      "confidence": 0.741,
+      "segment_id": 0
+    },
+    {
+      "word": "moon,",
+      "start_time": 24.72,
+      "end_time": 25.3,
+      "duration": 0.58,
+      "confidence": 0.992,
+      "segment_id": 0
+    },
+    {
+      "word": "I",
+      "start_time": 26.3,
+      "end_time": 26.46,
+      "duration": 0.16,
+      "confidence": 0.994,
+      "segment_id": 0
+    },
+    {
+      "word": "find",
+      "start_time": 26.46,
+      "end_time": 26.82,
+      "duration": 0.36,
+      "confidence": 0.978,
+      "segment_id": 0
+    },
+    {
+      "word": "my",
+      "start_time": 26.82,
+      "end_time": 27.24,
+      "duration": 0.42,
+      "confidence": 0.995,
+      "segment_id": 0
+    },
+    {
+      "word": "heart",
+      "start_time": 27.24,
+      "end_time": 27.98,
+      "duration": 0.74,
+      "confidence": 0.996,
+      "segment_id": 0
+    },
+    {
+      "word": "in",
+      "start_time": 27.98,
+      "end_time": 28.34,
+      "duration": 0.36,
+      "confidence": 0.969,
+      "segment_id": 0
+    },
+    {
+      "word": "a",
+      "start_time": 28.34,
+      "end_time": 28.44,
+      "duration": 0.1,
+      "confidence": 0.578,
+      "segment_id": 0
+    },
+    {
+      "word": "tender",
+      "start_time": 28.44,
+      "end_time": 28.86,
+      "duration": 0.42,
+      "confidence": 0.73,
+      "segment_id": 0
+    },
+    {
+      "word": "tune.",
+      "start_time": 28.86,
+      "end_time": 29.44,
+      "duration": 0.58,
+      "confidence": 0.755,
+      "segment_id": 0
+    },
+    {
+      "word": "Every",
+      "start_time": 29.44,
+      "end_time": 31.5,
+      "duration": 2.06,
+      "confidence": 0.283,
+      "segment_id": 1
+    },
+    {
+      "word": "step",
+      "start_time": 31.5,
+      "end_time": 31.88,
+      "duration": 0.38,
+      "confidence": 0.995,
+      "segment_id": 1
+    },
+    {
+      "word": "brings",
+      "start_time": 31.88,
+      "end_time": 32.38,
+      "duration": 0.5,
+      "confidence": 0.98,
+      "segment_id": 1
+    },
+    {
+      "word": "me",
+      "start_time": 32.38,
+      "end_time": 32.64,
+      "duration": 0.26,
+      "confidence": 0.999,
+      "segment_id": 1
+    },
+    {
+      "word": "close",
+      "start_time": 32.64,
+      "end_time": 33.18,
+      "duration": 0.54,
+      "confidence": 0.985,
+      "segment_id": 1
+    },
+    {
+      "word": "to",
+      "start_time": 33.18,
+      "end_time": 33.7,
+      "duration": 0.52,
+      "confidence": 0.993,
+      "segment_id": 1
+    },
+    {
+      "word": "you,",
+      "start_time": 33.7,
+      "end_time": 34.32,
+      "duration": 0.62,
+      "confidence": 0.989,
+      "segment_id": 1
+    },
+    {
+      "word": "every",
+      "start_time": 34.32,
+      "end_time": 34.9,
+      "duration": 0.58,
+      "confidence": 0.901,
+      "segment_id": 1
+    },
+    {
+      "word": "moment",
+      "start_time": 34.9,
+      "end_time": 35.72,
+      "duration": 0.82,
+      "confidence": 0.998,
+      "segment_id": 1
+    },
+    {
+      "word": "feels",
+      "start_time": 35.72,
+      "end_time": 36.32,
+      "duration": 0.6,
+      "confidence": 0.948,
+      "segment_id": 1
+    },
+    {
+      "word": "so",
+      "start_time": 36.32,
+      "end_time": 36.98,
+      "duration": 0.66,
+      "confidence": 0.998,
+      "segment_id": 1
+    },
+    {
+      "word": "true.",
+      "start_time": 36.98,
+      "end_time": 38.32,
+      "duration": 1.34,
+      "confidence": 0.988,
+      "segment_id": 1
+    },
+    {
+      "word": "Soft",
+      "start_time": 39.06,
+      "end_time": 39.64,
+      "duration": 0.58,
+      "confidence": 0.64,
+      "segment_id": 2
+    },
+    {
+      "word": "is",
+      "start_time": 39.64,
+      "end_time": 40.04,
+      "duration": 0.4,
+      "confidence": 0.915,
+      "segment_id": 2
+    },
+    {
+      "word": "the",
+      "start_time": 40.04,
+      "end_time": 40.36,
+      "duration": 0.32,
+      "confidence": 0.995,
+      "segment_id": 2
+    },
+    {
+      "word": "night",
+      "start_time": 40.36,
+      "end_time": 40.92,
+      "duration": 0.56,
+      "confidence": 0.998,
+      "segment_id": 2
+    },
+    {
+      "word": "as",
+      "start_time": 40.92,
+      "end_time": 41.28,
+      "duration": 0.36,
+      "confidence": 0.912,
+      "segment_id": 2
+    },
+    {
+      "word": "it",
+      "start_time": 41.28,
+      "end_time": 41.5,
+      "duration": 0.22,
+      "confidence": 0.998,
+      "segment_id": 2
+    },
+    {
+      "word": "holds",
+      "start_time": 41.5,
+      "end_time": 41.92,
+      "duration": 0.42,
+      "confidence": 0.993,
+      "segment_id": 2
+    },
+    {
+      "word": "our",
+      "start_time": 41.92,
+      "end_time": 42.42,
+      "duration": 0.5,
+      "confidence": 0.987,
+      "segment_id": 2
+    },
+    {
+      "word": "song.",
+      "start_time": 42.42,
+      "end_time": 43.14,
+      "duration": 0.72,
+      "confidence": 0.911,
+      "segment_id": 2
+    },
+    {
+      "word": "In",
+      "start_time": 43.74,
+      "end_time": 43.94,
+      "duration": 0.2,
+      "confidence": 0.982,
+      "segment_id": 3
+    },
+    {
+      "word": "your",
+      "start_time": 43.94,
+      "end_time": 44.36,
+      "duration": 0.42,
+      "confidence": 0.994,
+      "segment_id": 3
+    },
+    {
+      "word": "embraces",
+      "start_time": 44.36,
+      "end_time": 45.4,
+      "duration": 1.04,
+      "confidence": 0.918,
+      "segment_id": 3
+    },
+    {
+      "word": "where",
+      "start_time": 45.4,
+      "end_time": 45.88,
+      "duration": 0.48,
+      "confidence": 0.756,
+      "segment_id": 3
+    },
+    {
+      "word": "I",
+      "start_time": 45.88,
+      "end_time": 46.4,
+      "duration": 0.52,
+      "confidence": 0.98,
+      "segment_id": 3
+    },
+    {
+      "word": "belong,",
+      "start_time": 46.4,
+      "end_time": 47.08,
+      "duration": 0.68,
+      "confidence": 0.995,
+      "segment_id": 3
+    },
+    {
+      "word": "every",
+      "start_time": 47.66,
+      "end_time": 48.62,
+      "duration": 0.96,
+      "confidence": 0.918,
+      "segment_id": 3
+    },
+    {
+      "word": "glance",
+      "start_time": 48.62,
+      "end_time": 49.46,
+      "duration": 0.84,
+      "confidence": 0.84,
+      "segment_id": 3
+    },
+    {
+      "word": "is",
+      "start_time": 49.46,
+      "end_time": 49.96,
+      "duration": 0.5,
+      "confidence": 0.994,
+      "segment_id": 3
+    },
+    {
+      "word": "a",
+      "start_time": 49.96,
+      "end_time": 50.14,
+      "duration": 0.18,
+      "confidence": 0.981,
+      "segment_id": 3
+    },
+    {
+      "word": "sweet",
+      "start_time": 50.14,
+      "end_time": 50.68,
+      "duration": 0.54,
+      "confidence": 0.991,
+      "segment_id": 3
+    },
+    {
+      "word": "surprise.",
+      "start_time": 50.68,
+      "end_time": 51.48,
+      "duration": 0.8,
+      "confidence": 0.98,
+      "segment_id": 3
+    },
+    {
+      "word": "I",
+      "start_time": 51.98,
+      "end_time": 52.0,
+      "duration": 0.02,
+      "confidence": 0.991,
+      "segment_id": 4
+    },
+    {
+      "word": "keep",
+      "start_time": 52.0,
+      "end_time": 52.32,
+      "duration": 0.32,
+      "confidence": 0.997,
+      "segment_id": 4
+    },
+    {
+      "word": "dancing",
+      "start_time": 52.32,
+      "end_time": 53.0,
+      "duration": 0.68,
+      "confidence": 0.993,
+      "segment_id": 4
+    },
+    {
+      "word": "in",
+      "start_time": 53.0,
+      "end_time": 53.86,
+      "duration": 0.86,
+      "confidence": 0.99,
+      "segment_id": 4
+    },
+    {
+      "word": "your",
+      "start_time": 53.86,
+      "end_time": 54.44,
+      "duration": 0.58,
+      "confidence": 0.997,
+      "segment_id": 4
+    },
+    {
+      "word": "eyes.",
+      "start_time": 54.44,
+      "end_time": 55.68,
+      "duration": 1.24,
+      "confidence": 0.981,
+      "segment_id": 4
+    },
+    {
+      "word": "Round",
+      "start_time": 56.44,
+      "end_time": 57.14,
+      "duration": 0.7,
+      "confidence": 0.354,
+      "segment_id": 5
+    },
+    {
+      "word": "and",
+      "start_time": 57.14,
+      "end_time": 57.74,
+      "duration": 0.6,
+      "confidence": 0.972,
+      "segment_id": 5
+    },
+    {
+      "word": "round",
+      "start_time": 57.74,
+      "end_time": 59.06,
+      "duration": 1.32,
+      "confidence": 0.997,
+      "segment_id": 5
+    },
+    {
+      "word": "the",
+      "start_time": 59.06,
+      "end_time": 59.8,
+      "duration": 0.74,
+      "confidence": 0.281,
+      "segment_id": 5
+    },
+    {
+      "word": "wall",
+      "start_time": 59.8,
+      "end_time": 60.22,
+      "duration": 0.42,
+      "confidence": 0.853,
+      "segment_id": 5
+    },
+    {
+      "word": "fades",
+      "start_time": 60.22,
+      "end_time": 61.02,
+      "duration": 0.8,
+      "confidence": 0.936,
+      "segment_id": 5
+    },
+    {
+      "word": "away.",
+      "start_time": 61.02,
+      "end_time": 62.0,
+      "duration": 0.98,
+      "confidence": 0.999,
+      "segment_id": 5
+    },
+    {
+      "word": "Love",
+      "start_time": 63.28,
+      "end_time": 64.62,
+      "duration": 1.34,
+      "confidence": 0.897,
+      "segment_id": 6
+    },
+    {
+      "word": "is",
+      "start_time": 64.62,
+      "end_time": 65.22,
+      "duration": 0.6,
+      "confidence": 0.998,
+      "segment_id": 6
+    },
+    {
+      "word": "the",
+      "start_time": 65.22,
+      "end_time": 65.42,
+      "duration": 0.2,
+      "confidence": 0.991,
+      "segment_id": 6
+    },
+    {
+      "word": "music",
+      "start_time": 65.42,
+      "end_time": 66.64,
+      "duration": 1.22,
+      "confidence": 0.911,
+      "segment_id": 6
+    },
+    {
+      "word": "and",
+      "start_time": 66.64,
+      "end_time": 69.0,
+      "duration": 2.36,
+      "confidence": 0.554,
+      "segment_id": 6
+    },
+    {
+      "word": "we",
+      "start_time": 69.0,
+      "end_time": 69.42,
+      "duration": 0.42,
+      "confidence": 0.998,
+      "segment_id": 6
+    },
+    {
+      "word": "will",
+      "start_time": 69.42,
+      "end_time": 69.64,
+      "duration": 0.22,
+      "confidence": 0.986,
+      "segment_id": 6
+    },
+    {
+      "word": "sway.",
+      "start_time": 69.64,
+      "end_time": 70.84,
+      "duration": 1.2,
+      "confidence": 0.928,
+      "segment_id": 6
+    },
+    {
+      "word": "Hand",
+      "start_time": 73.3,
+      "end_time": 74.7,
+      "duration": 1.4,
+      "confidence": 0.919,
+      "segment_id": 7
+    },
+    {
+      "word": "in",
+      "start_time": 74.7,
+      "end_time": 75.14,
+      "duration": 0.44,
+      "confidence": 0.912,
+      "segment_id": 7
+    },
+    {
+      "word": "hand",
+      "start_time": 75.14,
+      "end_time": 76.18,
+      "duration": 1.04,
+      "confidence": 0.999,
+      "segment_id": 7
+    },
+    {
+      "word": "through",
+      "start_time": 76.18,
+      "end_time": 77.12,
+      "duration": 0.94,
+      "confidence": 0.915,
+      "segment_id": 7
+    },
+    {
+      "word": "the",
+      "start_time": 77.12,
+      "end_time": 77.36,
+      "duration": 0.24,
+      "confidence": 0.994,
+      "segment_id": 7
+    },
+    {
+      "word": "gentle",
+      "start_time": 77.36,
+      "end_time": 78.3,
+      "duration": 0.94,
+      "confidence": 0.987,
+      "segment_id": 7
+    },
+    {
+      "word": "sky,",
+      "start_time": 78.3,
+      "end_time": 80.1,
+      "duration": 1.8,
+      "confidence": 0.996,
+      "segment_id": 7
+    },
+    {
+      "word": "forever",
+      "start_time": 80.84,
+      "end_time": 82.6,
+      "duration": 1.76,
+      "confidence": 0.655,
+      "segment_id": 7
+    },
+    {
+      "word": "dancing.",
+      "start_time": 82.6,
+      "end_time": 84.04,
+      "duration": 1.44,
+      "confidence": 0.781,
+      "segment_id": 7
+    },
+    {
+      "word": "In",
+      "start_time": 85.68,
+      "end_time": 86.58,
+      "duration": 0.9,
+      "confidence": 0.393,
+      "segment_id": 8
+    },
+    {
+      "word": "your",
+      "start_time": 86.58,
+      "end_time": 87.2,
+      "duration": 0.62,
+      "confidence": 0.976,
+      "segment_id": 8
+    },
+    {
+      "word": "eyes.",
+      "start_time": 87.2,
+      "end_time": 88.88,
+      "duration": 1.68,
+      "confidence": 0.994,
+      "segment_id": 8
+    },
+    {
+      "word": "No",
+      "start_time": 90.18,
+      "end_time": 91.38,
+      "duration": 1.2,
+      "confidence": 0.733,
+      "segment_id": 9
+    },
+    {
+      "word": "time,",
+      "start_time": 91.38,
+      "end_time": 92.02,
+      "duration": 0.64,
+      "confidence": 0.986,
+      "segment_id": 9
+    },
+    {
+      "word": "no",
+      "start_time": 92.36,
+      "end_time": 92.52,
+      "duration": 0.16,
+      "confidence": 0.992,
+      "segment_id": 9
+    },
+    {
+      "word": "fear,",
+      "start_time": 92.52,
+      "end_time": 93.1,
+      "duration": 0.58,
+      "confidence": 0.999,
+      "segment_id": 9
+    },
+    {
+      "word": "just",
+      "start_time": 93.52,
+      "end_time": 93.8,
+      "duration": 0.28,
+      "confidence": 0.673,
+      "segment_id": 9
+    },
+    {
+      "word": "you",
+      "start_time": 93.8,
+      "end_time": 94.1,
+      "duration": 0.3,
+      "confidence": 0.991,
+      "segment_id": 9
+    },
+    {
+      "word": "and",
+      "start_time": 94.1,
+      "end_time": 94.78,
+      "duration": 0.68,
+      "confidence": 0.928,
+      "segment_id": 9
+    },
+    {
+      "word": "me",
+      "start_time": 94.78,
+      "end_time": 95.28,
+      "duration": 0.5,
+      "confidence": 0.998,
+      "segment_id": 9
+    },
+    {
+      "word": "spinning",
+      "start_time": 95.28,
+      "end_time": 96.32,
+      "duration": 1.04,
+      "confidence": 0.225,
+      "segment_id": 9
+    },
+    {
+      "word": "like",
+      "start_time": 96.32,
+      "end_time": 96.74,
+      "duration": 0.42,
+      "confidence": 0.918,
+      "segment_id": 9
+    },
+    {
+      "word": "waves",
+      "start_time": 96.74,
+      "end_time": 97.52,
+      "duration": 0.78,
+      "confidence": 0.997,
+      "segment_id": 9
+    },
+    {
+      "word": "on",
+      "start_time": 97.52,
+      "end_time": 97.94,
+      "duration": 0.42,
+      "confidence": 0.415,
+      "segment_id": 9
+    },
+    {
+      "word": "a",
+      "start_time": 97.94,
+      "end_time": 98.12,
+      "duration": 0.18,
+      "confidence": 0.995,
+      "segment_id": 9
+    },
+    {
+      "word": "timeless",
+      "start_time": 98.12,
+      "end_time": 98.98,
+      "duration": 0.86,
+      "confidence": 0.64,
+      "segment_id": 9
+    },
+    {
+      "word": "sea.",
+      "start_time": 98.98,
+      "end_time": 99.64,
+      "duration": 0.66,
+      "confidence": 0.731,
+      "segment_id": 9
+    },
+    {
+      "word": "Every",
+      "start_time": 100.38,
+      "end_time": 101.26,
+      "duration": 0.88,
+      "confidence": 0.984,
+      "segment_id": 10
+    },
+    {
+      "word": "heart",
+      "start_time": 101.26,
+      "end_time": 101.8,
+      "duration": 0.54,
+      "confidence": 0.922,
+      "segment_id": 10
+    },
+    {
+      "word": "retails",
+      "start_time": 101.8,
+      "end_time": 102.82,
+      "duration": 1.02,
+      "confidence": 0.52,
+      "segment_id": 10
+    },
+    {
+      "word": "me,",
+      "start_time": 102.82,
+      "end_time": 103.16,
+      "duration": 0.34,
+      "confidence": 0.98,
+      "segment_id": 10
+    },
+    {
+      "word": "it's",
+      "start_time": 103.26,
+      "end_time": 103.5,
+      "duration": 0.24,
+      "confidence": 0.973,
+      "segment_id": 10
+    },
+    {
+      "word": "true,",
+      "start_time": 103.5,
+      "end_time": 103.86,
+      "duration": 0.36,
+      "confidence": 0.998,
+      "segment_id": 10
+    },
+    {
+      "word": "my",
+      "start_time": 104.34,
+      "end_time": 104.64,
+      "duration": 0.3,
+      "confidence": 0.924,
+      "segment_id": 10
+    },
+    {
+      "word": "forever",
+      "start_time": 104.64,
+      "end_time": 105.22,
+      "duration": 0.58,
+      "confidence": 0.982,
+      "segment_id": 10
+    },
+    {
+      "word": "begins",
+      "start_time": 105.22,
+      "end_time": 106.02,
+      "duration": 0.8,
+      "confidence": 0.997,
+      "segment_id": 10
+    },
+    {
+      "word": "with",
+      "start_time": 106.02,
+      "end_time": 106.76,
+      "duration": 0.74,
+      "confidence": 0.999,
+      "segment_id": 10
+    },
+    {
+      "word": "you.",
+      "start_time": 106.76,
+      "end_time": 107.44,
+      "duration": 0.68,
+      "confidence": 0.996,
+      "segment_id": 10
+    },
+    {
+      "word": "Round",
+      "start_time": 125.58,
+      "end_time": 126.98,
+      "duration": 1.4,
+      "confidence": 0.371,
+      "segment_id": 11
+    },
+    {
+      "word": "and",
+      "start_time": 126.98,
+      "end_time": 127.5,
+      "duration": 0.52,
+      "confidence": 0.936,
+      "segment_id": 11
+    },
+    {
+      "word": "round",
+      "start_time": 127.5,
+      "end_time": 128.7,
+      "duration": 1.2,
+      "confidence": 0.996,
+      "segment_id": 11
+    },
+    {
+      "word": "the",
+      "start_time": 128.7,
+      "end_time": 129.68,
+      "duration": 0.98,
+      "confidence": 0.495,
+      "segment_id": 11
+    },
+    {
+      "word": "world",
+      "start_time": 129.68,
+      "end_time": 130.14,
+      "duration": 0.46,
+      "confidence": 0.967,
+      "segment_id": 11
+    },
+    {
+      "word": "fades",
+      "start_time": 130.14,
+      "end_time": 130.72,
+      "duration": 0.58,
+      "confidence": 0.385,
+      "segment_id": 11
+    },
+    {
+      "word": "away.",
+      "start_time": 130.72,
+      "end_time": 132.38,
+      "duration": 1.66,
+      "confidence": 0.999,
+      "segment_id": 11
+    },
+    {
+      "word": "Love",
+      "start_time": 133.58,
+      "end_time": 134.48,
+      "duration": 0.9,
+      "confidence": 0.956,
+      "segment_id": 12
+    },
+    {
+      "word": "is",
+      "start_time": 134.48,
+      "end_time": 135.02,
+      "duration": 0.54,
+      "confidence": 0.995,
+      "segment_id": 12
+    },
+    {
+      "word": "the",
+      "start_time": 135.02,
+      "end_time": 135.24,
+      "duration": 0.22,
+      "confidence": 0.989,
+      "segment_id": 12
+    },
+    {
+      "word": "music",
+      "start_time": 135.24,
+      "end_time": 136.54,
+      "duration": 1.3,
+      "confidence": 0.978,
+      "segment_id": 12
+    },
+    {
+      "word": "and",
+      "start_time": 136.54,
+      "end_time": 138.74,
+      "duration": 2.2,
+      "confidence": 0.743,
+      "segment_id": 12
+    },
+    {
+      "word": "we",
+      "start_time": 138.74,
+      "end_time": 139.26,
+      "duration": 0.52,
+      "confidence": 0.998,
+      "segment_id": 12
+    },
+    {
+      "word": "will",
+      "start_time": 139.26,
+      "end_time": 139.64,
+      "duration": 0.38,
+      "confidence": 0.989,
+      "segment_id": 12
+    },
+    {
+      "word": "sway.",
+      "start_time": 139.64,
+      "end_time": 140.74,
+      "duration": 1.1,
+      "confidence": 0.728,
+      "segment_id": 12
+    },
+    {
+      "word": "Hand",
+      "start_time": 143.08,
+      "end_time": 144.48,
+      "duration": 1.4,
+      "confidence": 0.013,
+      "segment_id": 13
+    },
+    {
+      "word": "in",
+      "start_time": 144.48,
+      "end_time": 144.92,
+      "duration": 0.44,
+      "confidence": 0.335,
+      "segment_id": 13
+    },
+    {
+      "word": "hand",
+      "start_time": 144.92,
+      "end_time": 145.66,
+      "duration": 0.74,
+      "confidence": 0.992,
+      "segment_id": 13
+    },
+    {
+      "word": "through",
+      "start_time": 145.66,
+      "end_time": 146.94,
+      "duration": 1.28,
+      "confidence": 0.746,
+      "segment_id": 13
+    },
+    {
+      "word": "the",
+      "start_time": 146.94,
+      "end_time": 147.18,
+      "duration": 0.24,
+      "confidence": 0.994,
+      "segment_id": 13
+    },
+    {
+      "word": "gentle",
+      "start_time": 147.18,
+      "end_time": 148.12,
+      "duration": 0.94,
+      "confidence": 0.528,
+      "segment_id": 13
+    },
+    {
+      "word": "sky,",
+      "start_time": 148.12,
+      "end_time": 149.34,
+      "duration": 1.22,
+      "confidence": 0.534,
+      "segment_id": 13
+    },
+    {
+      "word": "forever",
+      "start_time": 150.64,
+      "end_time": 152.18,
+      "duration": 1.54,
+      "confidence": 0.665,
+      "segment_id": 13
+    },
+    {
+      "word": "dancing.",
+      "start_time": 152.18,
+      "end_time": 153.86,
+      "duration": 1.68,
+      "confidence": 0.865,
+      "segment_id": 13
+    },
+    {
+      "word": "In",
+      "start_time": 155.64,
+      "end_time": 156.4,
+      "duration": 0.76,
+      "confidence": 0.907,
+      "segment_id": 14
+    },
+    {
+      "word": "your",
+      "start_time": 156.4,
+      "end_time": 156.92,
+      "duration": 0.52,
+      "confidence": 0.982,
+      "segment_id": 14
+    },
+    {
+      "word": "eyes.",
+      "start_time": 156.92,
+      "end_time": 158.26,
+      "duration": 1.34,
+      "confidence": 0.484,
+      "segment_id": 14
+    },
+    {
+      "word": "Round",
+      "start_time": 199.32,
+      "end_time": 200.72,
+      "duration": 1.4,
+      "confidence": 0.0,
+      "segment_id": 15
+    },
+    {
+      "word": "and",
+      "start_time": 200.72,
+      "end_time": 200.82,
+      "duration": 0.1,
+      "confidence": 0.031,
+      "segment_id": 15
+    },
+    {
+      "word": "round",
+      "start_time": 200.72,
+      "end_time": 200.82,
+      "duration": 0.1,
+      "confidence": 0.614,
+      "segment_id": 15
+    },
+    {
+      "word": "the",
+      "start_time": 200.72,
+      "end_time": 200.82,
+      "duration": 0.1,
+      "confidence": 0.011,
+      "segment_id": 15
+    },
+    {
+      "word": "wall",
+      "start_time": 200.72,
+      "end_time": 200.82,
+      "duration": 0.1,
+      "confidence": 0.002,
+      "segment_id": 15
+    },
+    {
+      "word": "fades",
+      "start_time": 200.72,
+      "end_time": 200.82,
+      "duration": 0.1,
+      "confidence": 0.0,
+      "segment_id": 15
+    },
+    {
+      "word": "away.",
+      "start_time": 200.72,
+      "end_time": 200.82,
+      "duration": 0.1,
+      "confidence": 0.05,
+      "segment_id": 15
+    },
+    {
+      "word": "Round",
+      "start_time": 201.36,
+      "end_time": 202.06,
+      "duration": 0.7,
+      "confidence": 0.0,
+      "segment_id": 16
+    },
+    {
+      "word": "and",
+      "start_time": 202.06,
+      "end_time": 202.16,
+      "duration": 0.1,
+      "confidence": 0.018,
+      "segment_id": 16
+    },
+    {
+      "word": "round",
+      "start_time": 202.06,
+      "end_time": 202.16,
+      "duration": 0.1,
+      "confidence": 0.435,
+      "segment_id": 16
+    },
+    {
+      "word": "the",
+      "start_time": 202.06,
+      "end_time": 202.16,
+      "duration": 0.1,
+      "confidence": 0.009,
+      "segment_id": 16
+    },
+    {
+      "word": "wall",
+      "start_time": 202.06,
+      "end_time": 202.16,
+      "duration": 0.1,
+      "confidence": 0.003,
+      "segment_id": 16
+    },
+    {
+      "word": "fades",
+      "start_time": 202.06,
+      "end_time": 202.16,
+      "duration": 0.1,
+      "confidence": 0.0,
+      "segment_id": 16
+    },
+    {
+      "word": "away.",
+      "start_time": 202.06,
+      "end_time": 202.16,
+      "duration": 0.1,
+      "confidence": 0.052,
+      "segment_id": 16
+    }
+  ],
+  "confidence_scores": [
+    0.5081542787097749,
+    0.7858939341136387,
+    0.7858939341136387,
+    0.7858939341136387,
+    0.7858939341136387,
+    0.771591922215053,
+    0.771591922215053,
+    0.771591922215053,
+    0.8014718138653298,
+    0.8014718138653298,
+    0.8014718138653298,
+    0.7832057787024457,
+    0.7832057787024457,
+    0.7883387088775635,
+    0.7883387088775635,
+    0.5991712013880413,
+    0.6491516033808391,
+    0.5958319577303799
+  ],
+  "audio": {
+    "duration": 202.06,
+    "source_file": "C:\\Users\\taikh\\AppData\\Local\\Temp\\demucs_4mah11ba\\Dancing in Your Eyes_(Vocals)_UVR_MDXNET_KARA_2.wav"
+  },
+  "statistics": {
+    "segments": {
+      "count": 18,
+      "average_duration": 5.888,
+      "min_duration": 0.34,
+      "max_duration": 10.78,
+      "average_confidence": 0.742,
+      "min_confidence": 0.508,
+      "max_confidence": 0.801
+    },
+    "words": {
+      "count": 148,
+      "average_duration": 0.688,
+      "min_duration": 0.02,
+      "max_duration": 2.36,
+      "average_confidence": 0.793,
+      "min_confidence": 0.0,
+      "max_confidence": 0.999
+    },
+    "quality": {
+      "high_confidence_segments": 3,
+      "medium_confidence_segments": 15,
+      "low_confidence_segments": 0,
+      "high_confidence_words": 101,
+      "medium_confidence_words": 21,
+      "low_confidence_words": 26
+    }
+  }
+}

@@ -1,0 +1,2 @@
+This is a test media file for testing the import functionality.
+You can use this to test the import media dialog.
