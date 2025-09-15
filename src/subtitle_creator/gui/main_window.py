@@ -53,6 +53,7 @@ class MainWindow(QMainWindow):
     playback_play_requested = pyqtSignal()
     playback_pause_requested = pyqtSignal()
     playback_stop_requested = pyqtSignal()
+    audio_preview_requested = pyqtSignal()
     
     def __init__(self, parent: Optional[QWidget] = None):
         """Initialize the main window with layout and components."""
@@ -183,6 +184,12 @@ class MainWindow(QMainWindow):
         self.action_stop.setShortcut(QKeySequence("Ctrl+."))
         self.action_stop.setStatusTip("Stop playback")
         
+        # Audio preview action
+        self.action_preview_audio = QAction("Preview &Audio", self)
+        self.action_preview_audio.setShortcut(QKeySequence("Ctrl+A"))
+        self.action_preview_audio.setStatusTip("Preview audio (first 10 seconds)")
+        self.action_preview_audio.setEnabled(False)  # Enabled when audio is loaded
+        
         # Effects menu actions
         self.action_apply_preset = QAction("Apply &Preset...", self)
         self.action_apply_preset.setStatusTip("Apply a saved effect preset")
@@ -277,6 +284,7 @@ class MainWindow(QMainWindow):
         # Playback controls
         toolbar.addAction(self.action_play)
         toolbar.addAction(self.action_stop)
+        toolbar.addAction(self.action_preview_audio)
         toolbar.addSeparator()
         
         # Export
@@ -388,6 +396,7 @@ class MainWindow(QMainWindow):
         # Playback connections
         self.action_play.triggered.connect(self._handle_play_pause)
         self.action_stop.triggered.connect(self._handle_stop)
+        self.action_preview_audio.triggered.connect(self._handle_preview_audio)
         
         # Connect preview panel signals
         self.preview_panel.play_requested.connect(self.playback_play_requested.emit)
@@ -475,6 +484,10 @@ class MainWindow(QMainWindow):
         self.action_play.setChecked(False)
         self.action_play.setText("&Play")
         self.preview_panel._handle_stop()
+    
+    def _handle_preview_audio(self) -> None:
+        """Handle audio preview request."""
+        self.audio_preview_requested.emit()
     
     def _toggle_timeline_panel(self) -> None:
         """Toggle timeline panel visibility."""
@@ -585,6 +598,14 @@ class MainWindow(QMainWindow):
             self.action_play.setText("&Pause")
         else:
             self.action_play.setText("&Play")
+    
+    def set_audio_loaded(self, loaded: bool) -> None:
+        """Update UI to reflect audio loaded state."""
+        self.action_preview_audio.setEnabled(loaded)
+        if loaded:
+            self.action_preview_audio.setStatusTip("Preview audio (first 10 seconds)")
+        else:
+            self.action_preview_audio.setStatusTip("No audio loaded")
     
     def show_status_message(self, message: str, timeout: int = 0) -> None:
         """Show a message in the status bar."""

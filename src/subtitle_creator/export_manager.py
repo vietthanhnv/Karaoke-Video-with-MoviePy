@@ -16,7 +16,7 @@ from enum import Enum
 
 # Optional imports for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy import VideoClip, CompositeVideoClip, ColorClip
+    from moviepy.editor import VideoClip, CompositeVideoClip, ColorClip
     import numpy as np
     MOVIEPY_AVAILABLE = True
 except ImportError:
@@ -463,7 +463,7 @@ class ExportManager(ExportManagerInterface):
             
             # Set final clip properties
             if MOVIEPY_AVAILABLE:
-                final_clip = final_clip.with_fps(quality_settings['fps'])
+                final_clip = final_clip.set_fps(quality_settings['fps'])
             
             self._current_clip = final_clip
             return final_clip

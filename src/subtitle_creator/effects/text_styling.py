@@ -217,8 +217,11 @@ class TypographyEffect(BaseEffect):
                     opacity = text_color[3] / 255.0
                     text_clip = text_clip.with_opacity(opacity)
                 
-                # Default positioning (center bottom)
-                text_clip = text_clip.with_position(('center', 'bottom'))
+                # Default positioning (center, safe bottom position)
+                # Use calculated position instead of 'bottom' to avoid cut-off issues
+                video_height = clip.size[1] if hasattr(clip, 'size') else 720
+                safe_bottom_y = video_height - 80  # 80 pixels from bottom
+                text_clip = text_clip.with_position(('center', safe_bottom_y))
                 
                 text_clips.append(text_clip)
             else:
@@ -359,6 +362,9 @@ class PositioningEffect(BaseEffect):
         """
         Calculate the position tuple based on alignment and offsets.
         
+        FIXED: This method now correctly handles MoviePy text positioning behavior.
+        MoviePy positions text clips by their CENTER point, not top-left corner.
+        
         Args:
             h_align: Horizontal alignment
             v_align: Vertical alignment
@@ -373,31 +379,47 @@ class PositioningEffect(BaseEffect):
         """
         width, height = video_size
         
-        # Calculate base positions
-        if h_align == 'left':
-            x_pos = margin_h
-        elif h_align == 'right':
-            x_pos = width - margin_h
-        else:  # center
-            x_pos = width // 2
+        # Use MoviePy's reliable string-based positioning for common cases
+        if h_align == 'center' and v_align == 'bottom' and x_offset == 0:
+            # For bottom center positioning, use calculated Y position with proper margin
+            bottom_y = height - margin_v + y_offset
+            # Ensure we don't go below the video bounds
+            bottom_y = max(margin_v, min(bottom_y, height - 20))  # 20px minimum from bottom
+            return ('center', bottom_y)
         
-        if v_align == 'top':
-            y_pos = margin_v
-        elif v_align == 'bottom':
-            y_pos = height - margin_v
-        else:  # middle
-            y_pos = height // 2
+        elif h_align == 'center' and v_align == 'middle' and x_offset == 0:
+            center_y = height // 2 + y_offset
+            return ('center', center_y)
         
-        # Apply offsets
-        x_pos += x_offset
-        y_pos += y_offset
+        elif h_align == 'center' and v_align == 'top' and x_offset == 0:
+            top_y = margin_v + y_offset
+            return ('center', top_y)
         
-        # Ensure positions are within bounds
-        x_pos = max(0, min(x_pos, width))
-        y_pos = max(0, min(y_pos, height))
-        
-        # Return as tuple for precise positioning
-        return (x_pos, y_pos)
+        else:
+            # For other alignments, calculate pixel positions
+            # Account for MoviePy's center-point positioning
+            if h_align == 'left':
+                x_pos = margin_h + x_offset
+            elif h_align == 'right':
+                x_pos = width - margin_h + x_offset
+            else:  # center
+                x_pos = width // 2 + x_offset
+            
+            if v_align == 'top':
+                y_pos = margin_v + y_offset
+            elif v_align == 'bottom':
+                # For bottom alignment, position above the bottom edge with proper margin
+                y_pos = height - margin_v + y_offset
+                # Ensure text doesn't go off-screen
+                y_pos = max(margin_v, min(y_pos, height - 20))
+            else:  # middle
+                y_pos = height // 2 + y_offset
+            
+            # Ensure positions are within safe bounds
+            x_pos = max(margin_h, min(x_pos, width - margin_h))
+            y_pos = max(margin_v, min(y_pos, height - margin_v))
+            
+            return (x_pos, y_pos)
 
 
 class BackgroundEffect(BaseEffect):

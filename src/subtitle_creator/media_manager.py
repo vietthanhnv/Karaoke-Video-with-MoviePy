@@ -146,7 +146,7 @@ class MediaManager(MediaManagerInterface):
         self._audio_cache: Dict[str, Any] = {}
         
         # Default settings for image-to-video conversion
-        self.default_image_duration = 10.0  # seconds
+        self.default_image_duration = 60.0  # seconds (increased from 10.0)
         self.default_fps = 24
     
     def _validate_dependencies(self) -> None:
@@ -160,6 +160,27 @@ class MediaManager(MediaManagerInterface):
             raise MediaError(
                 "PIL/Pillow is not available. Please install it with: pip install Pillow"
             )
+    
+    def set_default_image_duration(self, duration: float) -> None:
+        """
+        Set the default duration for image-to-video conversion.
+        
+        Args:
+            duration: Duration in seconds (must be positive)
+            
+        Raises:
+            MediaError: If duration is invalid
+        """
+        if duration <= 0:
+            raise MediaError("Image duration must be positive")
+        
+        self.default_image_duration = duration
+        # Clear video cache since duration affects the cached clips
+        self._video_cache.clear()
+    
+    def get_default_image_duration(self) -> float:
+        """Get the current default image duration."""
+        return self.default_image_duration
     
     def load_background_media(self, file_path: str, duration: Optional[float] = None) -> Any:
         """

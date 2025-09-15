@@ -367,7 +367,7 @@ class ASSSubtitleParser(SubtitleParser):
         for event in events:
             try:
                 # Parse karaoke timing if present
-                words = self._parse_karaoke_timing(event['text'])
+                words = self._parse_karaoke_timing(event['text'], event['start'])
                 
                 # Clean text of karaoke tags
                 clean_text = self._clean_ass_text(event['text'])
@@ -475,18 +475,19 @@ class ASSSubtitleParser(SubtitleParser):
         
         return total_seconds
     
-    def _parse_karaoke_timing(self, text: str) -> List[WordTiming]:
+    def _parse_karaoke_timing(self, text: str, line_start_time: float = 0.0) -> List[WordTiming]:
         """
         Parse karaoke timing tags from ASS text.
         
         Args:
             text: ASS text with karaoke tags
+            line_start_time: Start time of the line to offset word timing
             
         Returns:
             List of WordTiming objects
         """
         words = []
-        current_time = 0.0
+        current_time = line_start_time  # Start from line start time
         
         # Find all karaoke tags {\kXX} where XX is centiseconds
         parts = re.split(r'\{\\k(\d+)\}', text)

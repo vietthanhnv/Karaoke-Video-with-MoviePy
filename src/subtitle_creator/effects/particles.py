@@ -14,7 +14,7 @@ from dataclasses import dataclass
 
 # Optional import for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy import VideoClip, CompositeVideoClip, ImageClip, ColorClip, vfx
+    from moviepy.editor import VideoClip, CompositeVideoClip, ImageClip, ColorClip, vfx
     import numpy as np
     MOVIEPY_AVAILABLE = True
 except ImportError:
@@ -321,7 +321,7 @@ class ParticleEffect(BaseEffect):
             
             # Apply size
             if config.size != 1.0:
-                particle_clip = particle_clip.resized(config.size)
+                particle_clip = particle_clip.resize(config.size)
             
             # Apply initial opacity
             if config.opacity < 1.0:
@@ -414,10 +414,10 @@ class ParticleEffect(BaseEffect):
         # Apply fade effects
         effects = []
         if fade_in_duration > 0:
-            from moviepy import vfx
+            from moviepy.editor import vfx
             effects.append(vfx.CrossFadeIn(fade_in_duration))
         if fade_out_duration > 0:
-            from moviepy import vfx
+            from moviepy.editor import vfx
             effects.append(vfx.CrossFadeOut(fade_out_duration))
         
         if effects:
@@ -564,7 +564,7 @@ class HeartParticleEffect(ParticleEffect):
             return scale_factor
         
         # Apply pulsing resize (simplified)
-        # In full implementation: clip = clip.resized(pulse_func)
+        # In full implementation: clip = clip.resize(pulse_func)
         
         return clip
     
@@ -1250,7 +1250,7 @@ class CustomImageParticleEffect(ParticleEffect):
             if image_scale != 1.0:
                 preserve_aspect = self.get_parameter_value('preserve_aspect')
                 if preserve_aspect:
-                    image_clip = image_clip.resized(image_scale)
+                    image_clip = image_clip.resize(image_scale)
                 else:
                     # Non-uniform scaling would be applied here
                     image_clip = image_clip.resized(image_scale)

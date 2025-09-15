@@ -162,6 +162,7 @@ class AppController(QObject):
         self.main_window.import_media_requested.connect(self.load_background_media)
         self.main_window.import_subtitles_requested.connect(self.load_subtitle_file)
         self.main_window.import_audio_requested.connect(self.load_audio_file)
+        self.main_window.audio_preview_requested.connect(self.preview_audio)
         
         # Playback control signals
         self.main_window.playback_play_requested.connect(self.start_playback)
@@ -562,6 +563,10 @@ class AppController(QObject):
             self.project_state.audio_file_path = file_path
             self._mark_project_modified()
             
+            # Enable audio preview in UI
+            if self.main_window:
+                self.main_window.set_audio_loaded(True)
+            
             # Update preview to include audio
             self._schedule_preview_update()
             
@@ -573,6 +578,77 @@ class AppController(QObject):
         except Exception as e:
             print(f"DEBUG: Exception caught: {e}")
             self.error_occurred.emit("Audio Load Error", f"Failed to load audio: {str(e)}")
+    
+    def preview_audio(self, start_time: float = 0.0, duration: float = 10.0) -> None:
+        """
+        Preview audio playback using MoviePy's built-in audio preview.
+        
+        Args:
+            start_time: Start time in seconds (default: 0.0)
+            duration: Duration to preview in seconds (default: 10.0)
+        """
+        if not self._audio_clip:
+            self.status_message.emit("No audio loaded for preview", 2000)
+            return
+        
+        try:
+            # Calculate end time
+            audio_duration = getattr(self._audio_clip, 'duration', 0)
+            if audio_duration == 0:
+                self.status_message.emit("Audio duration unknown", 2000)
+                return
+            
+            end_time = min(start_time + duration, audio_duration)
+            
+            if start_time >= audio_duration:
+                self.status_message.emit("Start time beyond audio duration", 2000)
+                return
+            
+            # Create audio segment for preview
+            if start_time > 0 or end_time < audio_duration:
+                preview_clip = self._audio_clip.subclipped(start_time, end_time)
+            else:
+                preview_clip = self._audio_clip
+            
+            # Start audio preview in a separate thread to avoid blocking UI
+            import threading
+            
+            def play_audio():
+                try:
+                    preview_clip.preview()
+                except Exception as e:
+                    print(f"Audio preview error: {e}")
+            
+            audio_thread = threading.Thread(target=play_audio, daemon=True)
+            audio_thread.start()
+            
+            self.status_message.emit(f"Playing audio from {start_time:.1f}s to {end_time:.1f}s", 2000)
+            
+        except Exception as e:
+            self.error_occurred.emit("Audio Preview Error", f"Failed to preview audio: {str(e)}")
+    
+    def get_audio_info(self) -> Dict[str, Any]:
+        """
+        Get information about the currently loaded audio.
+        
+        Returns:
+            Dictionary with audio information or empty dict if no audio loaded
+        """
+        if not self._audio_clip:
+            return {}
+        
+        try:
+            info = {
+                'has_audio': True,
+                'duration': getattr(self._audio_clip, 'duration', 0),
+                'sample_rate': getattr(self._audio_clip, 'fps', 0),
+                'channels': getattr(self._audio_clip, 'nchannels', 0),
+                'file_path': self.project_state.audio_file_path
+            }
+            return info
+        except Exception as e:
+            print(f"Error getting audio info: {e}")
+            return {'has_audio': False, 'error': str(e)}
     
     def load_subtitle_file(self, file_path: str) -> None:
         """

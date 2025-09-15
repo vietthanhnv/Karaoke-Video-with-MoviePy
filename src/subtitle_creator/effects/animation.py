@@ -11,7 +11,7 @@ import math
 
 # Optional import for MoviePy - will be available when dependencies are installed
 try:
-    from moviepy import VideoClip, CompositeVideoClip, TextClip, ColorClip, vfx
+    from moviepy.editor import VideoClip, CompositeVideoClip, TextClip, ColorClip, vfx
     MOVIEPY_AVAILABLE = True
 except ImportError:
     # Create placeholders for development/testing
@@ -1093,7 +1093,7 @@ class FadeTransitionEffect(BaseEffect):
             # Apply fade effects based on type
             effects = []
             if fade_type in ['in', 'both']:
-                from moviepy import vfx
+                from moviepy.editor import vfx
                 effects.append(vfx.CrossFadeIn(fade_in_duration))
             
             if fade_type in ['out', 'both']:
